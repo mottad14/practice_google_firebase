@@ -11,9 +11,10 @@ function App() {
             Firebase Authorization and Context
             </h1>
             <Routes>
-              <Route path="/" element={<Signin/>}  />
+              <Routete path="/" element={<Signin/>}  />
               <Route path="/signup" element={<Signup/>}  />
               <Route path="/account" element={<Account/>}  />
+
             </Routes>
     </div>
   );
