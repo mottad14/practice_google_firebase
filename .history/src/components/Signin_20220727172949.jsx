@@ -14,8 +14,6 @@ const Signin = () => {
     setError('')
     try{ 
       signIn(email, password)
-      console.log("You are now signed in.")
-      navigate('/account')
     } catch(e){
       setError(e.message)
       console.log(error)

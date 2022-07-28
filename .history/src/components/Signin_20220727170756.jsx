@@ -12,10 +12,8 @@ const Signin = () => {
   const handleSubmit = (e) =>{
     e.preventDefault();
     setError('')
-    try{ 
-      signIn(email, password)
-      console.log("You are now signed in.")
-      navigate('/account')
+    try{
+      await signIn(email, password)
     } catch(e){
       setError(e.message)
       console.log(error)

@@ -4,13 +4,11 @@ import { UserAuth } from '../context/AuthContext';
 
 const Account = () => {
   const {user, logout} = UserAuth();
-  const navigate = useNavigate();
 
   const handleLogout = async () => {
     try{
       await logout()
-      navigate('/')
-      console.log("You are now logged out")
+      Navigate('/')
     } catch (e) {
       console.log (e.message)
     }

@@ -12,13 +12,12 @@ const Signin = () => {
   const handleSubmit = (e) =>{
     e.preventDefault();
     setError('')
-    try{ 
-      signIn(email, password)
-      console.log("You are now signed in.")
-      navigate('/account')
+    try{
+      await signIn(email, password)
+
     } catch(e){
       setError(e.message)
-      console.log(error)
+      console.log(e.message)
     }
   }
 
@@ -33,11 +32,11 @@ const Signin = () => {
           <form onSubmit={handleSubmit}> 
               <div className='flex flex-col py-2'>
                 <label className='py-2 font-medium' htmlFor=""> Email Address</label>
-                <input onChange={(e)=>setEmail(e.target.value)} className='border p-3' type="email"/>
+                <input className='border p-3' type="email"/>
               </div>
               <div className='flex flex-col py-2'>
                 <label className='py-2 font-medium' htmlFor=""> Password</label>
-                <input onChange={(e)=> setPassword(e.target.value)} className='border p-3' type="password"/>
+                <input className='border p-3' type="password"/>
               </div>
               <button className='border border-blue-500 bg-blue-600 hover:bg-blue-500 w-full p-4 my-2 text-white'>Sign in</button>
           </form>
